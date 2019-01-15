@@ -43,3 +43,30 @@ const Position$json = const {
   ],
 };
 
+const User$json = const {
+  '1': 'User',
+  '2': const [
+    const {'1': 'id', '3': 1, '4': 1, '5': 9, '10': 'id'},
+  ],
+};
+
+const Info$json = const {
+  '1': 'Info',
+  '2': const [
+    const {'1': 'title', '3': 1, '4': 1, '5': 9, '10': 'title'},
+    const {'1': 'volume', '3': 2, '4': 1, '5': 1, '10': 'volume'},
+    const {'1': 'position', '3': 3, '4': 1, '5': 1, '10': 'position'},
+    const {'1': 'state', '3': 4, '4': 1, '5': 14, '6': '.Info.State', '10': 'state'},
+  ],
+  '4': const [Info_State$json],
+};
+
+const Info_State$json = const {
+  '1': 'State',
+  '2': const [
+    const {'1': 'PLAYING', '2': 0},
+    const {'1': 'PAUSED', '2': 1},
+    const {'1': 'STOPPED', '2': 2},
+  ],
+};
+

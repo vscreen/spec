@@ -22,6 +22,23 @@ message Position {
     float value = 1;
 }
 
+message User {
+    string id = 1;
+}
+
+message Info {
+    string title = 1;
+    double volume = 2;
+    double position = 3;
+
+    enum State {
+        PLAYING = 0;
+        PAUSED = 1;
+        STOPPED = 2;
+    }
+    State state = 4;
+}
+
 service VScreen {
     rpc Auth(Credential) returns (Status) {}
     rpc Play(Empty) returns (Status) {}
@@ -30,4 +47,6 @@ service VScreen {
     rpc Next(Empty) returns (Status) {}
     rpc Add(Source) returns (Status) {}
     rpc Seek(Position) returns (Status) {}
+    rpc Subscribe(User) returns (stream Info) {}
+    rpc Unsubscribe(User) returns (Status) {}
 }

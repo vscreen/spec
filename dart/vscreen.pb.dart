@@ -142,3 +142,75 @@ class Position extends $pb.GeneratedMessage {
   void clearValue() => clearField(1);
 }
 
+class User extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = new $pb.BuilderInfo('User')
+    ..aOS(1, 'id')
+    ..hasRequiredFields = false
+  ;
+
+  User() : super();
+  User.fromBuffer(List<int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) : super.fromBuffer(i, r);
+  User.fromJson(String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) : super.fromJson(i, r);
+  User clone() => new User()..mergeFromMessage(this);
+  User copyWith(void Function(User) updates) => super.copyWith((message) => updates(message as User));
+  $pb.BuilderInfo get info_ => _i;
+  static User create() => new User();
+  User createEmptyInstance() => create();
+  static $pb.PbList<User> createRepeated() => new $pb.PbList<User>();
+  static User getDefault() => _defaultInstance ??= create()..freeze();
+  static User _defaultInstance;
+  static void $checkItem(User v) {
+    if (v is! User) $pb.checkItemFailed(v, _i.qualifiedMessageName);
+  }
+
+  String get id => $_getS(0, '');
+  set id(String v) { $_setString(0, v); }
+  bool hasId() => $_has(0);
+  void clearId() => clearField(1);
+}
+
+class Info extends $pb.GeneratedMessage {
+  static final $pb.BuilderInfo _i = new $pb.BuilderInfo('Info')
+    ..aOS(1, 'title')
+    ..a<double>(2, 'volume', $pb.PbFieldType.OD)
+    ..a<double>(3, 'position', $pb.PbFieldType.OD)
+    ..e<Info_State>(4, 'state', $pb.PbFieldType.OE, Info_State.PLAYING, Info_State.valueOf, Info_State.values)
+    ..hasRequiredFields = false
+  ;
+
+  Info() : super();
+  Info.fromBuffer(List<int> i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) : super.fromBuffer(i, r);
+  Info.fromJson(String i, [$pb.ExtensionRegistry r = $pb.ExtensionRegistry.EMPTY]) : super.fromJson(i, r);
+  Info clone() => new Info()..mergeFromMessage(this);
+  Info copyWith(void Function(Info) updates) => super.copyWith((message) => updates(message as Info));
+  $pb.BuilderInfo get info_ => _i;
+  static Info create() => new Info();
+  Info createEmptyInstance() => create();
+  static $pb.PbList<Info> createRepeated() => new $pb.PbList<Info>();
+  static Info getDefault() => _defaultInstance ??= create()..freeze();
+  static Info _defaultInstance;
+  static void $checkItem(Info v) {
+    if (v is! Info) $pb.checkItemFailed(v, _i.qualifiedMessageName);
+  }
+
+  String get title => $_getS(0, '');
+  set title(String v) { $_setString(0, v); }
+  bool hasTitle() => $_has(0);
+  void clearTitle() => clearField(1);
+
+  double get volume => $_getN(1);
+  set volume(double v) { $_setDouble(1, v); }
+  bool hasVolume() => $_has(1);
+  void clearVolume() => clearField(2);
+
+  double get position => $_getN(2);
+  set position(double v) { $_setDouble(2, v); }
+  bool hasPosition() => $_has(2);
+  void clearPosition() => clearField(3);
+
+  Info_State get state => $_getN(3);
+  set state(Info_State v) { setField(4, v); }
+  bool hasState() => $_has(3);
+  void clearState() => clearField(4);
+}
+

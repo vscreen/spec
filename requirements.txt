@@ -1,2 +1,2 @@
-grpc
-grpc_tools
+grpcio
+grpcio_tools
