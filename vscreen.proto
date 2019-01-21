@@ -4,6 +4,7 @@ message Empty {}
 
 enum StatusCode {
     OK = 0;
+    OPERATION_FAILED = 1;
 }
 
 message Status {
