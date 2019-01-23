@@ -22,7 +22,7 @@ message Source {
 }
 
 message Position {
-    float value = 1;
+    double value = 1;
 }
 
 message User {
