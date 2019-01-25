@@ -31,16 +31,10 @@ message User {
 
 message Info {
     string title = 1;
-    string thumbnailURL = 2;
+    string thumbnail = 2;
     double volume = 3;
     double position = 4;
-
-    enum State {
-        PLAYING = 0;
-        PAUSED = 1;
-        STOPPED = 2;
-    }
-    State state = 5;
+    bool playing = 5;
 }
 
 service VScreen {
