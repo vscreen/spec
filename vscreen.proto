@@ -25,7 +25,7 @@ message Info {
   double volume = 3;
   double position = 4;
   bool playing = 5;
-  double duration = 6;
+  uint64 duration = 6;
 }
 
 service VScreen {

@@ -7,6 +7,7 @@
 // ignore: UNUSED_SHOWN_NAME
 import 'dart:core' show int, bool, double, String, List, Map, override;
 
+import 'package:fixnum/fixnum.dart';
 import 'package:protobuf/protobuf.dart' as $pb;
 
 import 'vscreen.pbenum.dart';
@@ -158,7 +159,7 @@ class Info extends $pb.GeneratedMessage {
     ..a<double>(3, 'volume', $pb.PbFieldType.OD)
     ..a<double>(4, 'position', $pb.PbFieldType.OD)
     ..aOB(5, 'playing')
-    ..a<double>(6, 'duration', $pb.PbFieldType.OD)
+    ..a<Int64>(6, 'duration', $pb.PbFieldType.OU6, Int64.ZERO)
     ..hasRequiredFields = false
   ;
 
@@ -199,8 +200,8 @@ class Info extends $pb.GeneratedMessage {
   bool hasPlaying() => $_has(4);
   void clearPlaying() => clearField(5);
 
-  double get duration => $_getN(5);
-  set duration(double v) { $_setDouble(5, v); }
+  Int64 get duration => $_getI64(5);
+  set duration(Int64 v) { $_setInt64(5, v); }
   bool hasDuration() => $_has(5);
   void clearDuration() => clearField(6);
 }
