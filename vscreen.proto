@@ -5,46 +5,37 @@ option go_package = "server";
 message Empty {}
 
 enum StatusCode {
-    OK = 0;
-    OPERATION_FAILED = 1;
+  OK = 0;
+  OPERATION_FAILED = 1;
 }
 
-message Status {
-    StatusCode code = 1;
-}
+message Status { StatusCode code = 1; }
 
-message Credential {
-    string password = 1;
-}
+message Credential { string password = 1; }
 
-message Source {
-    string url = 1;
-}
+message Source { string url = 1; }
 
-message Position {
-    double value = 1;
-}
+message Position { double value = 1; }
 
-message User {
-    string id = 1;
-}
+message User { string id = 1; }
 
 message Info {
-    string title = 1;
-    string thumbnail = 2;
-    double volume = 3;
-    double position = 4;
-    bool playing = 5;
+  string title = 1;
+  string thumbnail = 2;
+  double volume = 3;
+  double position = 4;
+  bool playing = 5;
+  double duration = 6;
 }
 
 service VScreen {
-    rpc Auth(Credential) returns (Status) {}
-    rpc Play(Empty) returns (Status) {}
-    rpc Pause(Empty) returns (Status) {}
-    rpc Stop(Empty) returns (Status) {}
-    rpc Next(Empty) returns (Status) {}
-    rpc Add(Source) returns (Status) {}
-    rpc Seek(Position) returns (Status) {}
-    rpc Subscribe(User) returns (stream Info) {}
-    rpc Unsubscribe(User) returns (Status) {}
+  rpc Auth(Credential) returns (Status) {}
+  rpc Play(Empty) returns (Status) {}
+  rpc Pause(Empty) returns (Status) {}
+  rpc Stop(Empty) returns (Status) {}
+  rpc Next(Empty) returns (Status) {}
+  rpc Add(Source) returns (Status) {}
+  rpc Seek(Position) returns (Status) {}
+  rpc Subscribe(User) returns (stream Info) {}
+  rpc Unsubscribe(User) returns (Status) {}
 }
